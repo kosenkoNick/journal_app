@@ -1,8 +1,5 @@
 package com.example.journal.model.dto;
 
-import com.example.journal.model.Faculty;
-import com.example.journal.model.Subject;
-import com.example.journal.model.enums.Role;
 import java.io.Serializable;
 import java.util.List;
 import javax.validation.constraints.NotBlank;
@@ -12,18 +9,18 @@ import lombok.Data;
 
 @Data
 public class TutorDto implements Serializable {
-  private final Long id;
+  private Long id;
   @NotNull
   @NotBlank(message = "There should be a name")
   @Size(min = 2, max = 12, message = "Name should be more between 2 and 15 characters length")
-  private final String name;
+  private  String name;
   @NotNull
   @NotBlank(message = "There should be a last name")
   @Size(min = 2, max = 12, message = "Last name should be more between 2 and 15 characters length")
-  private final String surname;
-  private final List<Faculty> faculties;
-  private final List<Subject> subjects;
-  private final String username;
-  private final String password;
-  private final Role role;
+  private  String surname;
+  private  List<FacultyDto> faculties;
+  private  List<SubjectDto> subjects;
+  private  String username;
+  private  String password;
+  private  String role;
 }

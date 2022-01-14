@@ -1,7 +1,9 @@
 package com.example.journal.repository;
 
-import com.example.journal.model.Tutor;
+import com.example.journal.model.dao.TutorDao;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface TutorRepository extends JpaRepository<Tutor, Long> {
+@Repository
+public interface TutorRepository extends JpaRepository<TutorDao, Long> {
 }

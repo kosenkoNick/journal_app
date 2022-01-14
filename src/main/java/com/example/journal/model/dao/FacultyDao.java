@@ -1,4 +1,4 @@
-package com.example.journal.model;
+package com.example.journal.model.dao;
 
 import java.util.List;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Subject{
+public class FacultyDao {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ public class Subject{
 
   private String name;
 
-  @ManyToMany
-  private List<Group> groups;
+  @OneToMany
+  private List<GroupDao> groups;
 
   @ManyToMany
-  private List<Tutor> tutors;
+  private List<TutorDao> tutors;
 
 }

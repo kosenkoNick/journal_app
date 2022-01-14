@@ -1,4 +1,4 @@
-package com.example.journal.model;
+package com.example.journal.model.dao;
 
 import com.example.journal.model.enums.Role;
 import java.util.List;
@@ -18,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Tutor {
+public class TutorDao {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,10 +35,10 @@ public class Tutor {
   private String surname;
 
   @ManyToMany(mappedBy = "tutors")
-  private List<Faculty> faculties;
+  private List<FacultyDao> faculties;
 
   @ManyToMany(mappedBy = "tutors")
-  private List<Subject> subjects;
+  private List<SubjectDao> subjects;
 
   //  Security details
   private String username;

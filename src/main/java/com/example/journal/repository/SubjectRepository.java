@@ -1,7 +1,9 @@
 package com.example.journal.repository;
 
-import com.example.journal.model.Subject;
+import com.example.journal.model.dao.SubjectDao;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface SubjectRepository extends JpaRepository<Subject, Long> {
+@Repository
+public interface SubjectRepository extends JpaRepository<SubjectDao, Long> {
 }

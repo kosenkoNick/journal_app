@@ -1,4 +1,4 @@
-package com.example.journal.model;
+package com.example.journal.model.dao;
 
 import com.example.journal.model.enums.ClassType;
 import java.time.LocalDateTime;
@@ -17,7 +17,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name = "attendance")
-public class Attendance {
+public class AttendanceDao {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,12 @@ public class Attendance {
   private LocalDateTime date;
 
   @OneToOne
-  private Student student;
+  private StudentDao student;
 
   private boolean isAbsent;
 
   @OneToOne
-  private Subject subject;
+  private SubjectDao subject;
 
   private ClassType type;
 
