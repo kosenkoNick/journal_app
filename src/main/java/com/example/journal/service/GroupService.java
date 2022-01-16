@@ -1,12 +1,13 @@
 package com.example.journal.service;
 
-import com.example.journal.model.dto.GroupDto;
+import com.example.journal.model.dao.GroupDao;
+import java.rmi.NoSuchObjectException;
 
 public interface GroupService {
 
-  void create(GroupDto dto);
-  GroupDto readById(Long id);
+  GroupDao create(GroupDao dao);
+  GroupDao readById(Long id) throws NoSuchObjectException;
   //  void update(AttendanceDto dto);
-  void delete(Long id);
+  void delete(Long id) throws NoSuchObjectException;
 
 }

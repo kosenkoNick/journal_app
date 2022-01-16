@@ -5,16 +5,14 @@ import com.example.journal.repository.FacultyRepository;
 import com.example.journal.service.FacultyService;
 import java.rmi.NoSuchObjectException;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class FacultyServiceImpl implements FacultyService {
 
   private final FacultyRepository facultyRepository;
-
-  public FacultyServiceImpl(FacultyRepository facultyRepository) {
-    this.facultyRepository = facultyRepository;
-  }
 
   @Override
   public FacultyDao create(FacultyDao dao) {
