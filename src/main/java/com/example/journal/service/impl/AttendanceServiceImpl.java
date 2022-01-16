@@ -5,17 +5,14 @@ import com.example.journal.repository.AttendanceRepository;
 import com.example.journal.service.AttendanceService;
 import java.rmi.NoSuchObjectException;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class AttendanceServiceImpl implements AttendanceService {
 
   private final AttendanceRepository attendanceRepository;
-
-  public AttendanceServiceImpl(
-      AttendanceRepository attendanceRepository) {
-    this.attendanceRepository = attendanceRepository;
-  }
 
   @Override
   public AttendanceDao create(AttendanceDao dao) {
