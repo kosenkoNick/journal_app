@@ -1,12 +1,13 @@
 package com.example.journal.service;
 
-import com.example.journal.model.dto.StudentDto;
+import com.example.journal.model.dao.StudentDao;
+import java.rmi.NoSuchObjectException;
 
 public interface StudentService {
 
-  void create(StudentDto dto);
-  StudentDto readById(Long id);
+  StudentDao create(StudentDao dao);
+  StudentDao readById(Long id) throws NoSuchObjectException;
   //  void update(AttendanceDto dto);
-  void delete(Long id);
+  void delete(Long id) throws NoSuchObjectException;
 
 }
