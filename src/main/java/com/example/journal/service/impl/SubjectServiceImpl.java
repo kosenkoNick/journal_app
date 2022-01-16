@@ -7,15 +7,19 @@ import com.example.journal.repository.SubjectRepository;
 import com.example.journal.service.SubjectService;
 import java.rmi.NoSuchObjectException;
 import java.util.Optional;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class SubjectServiceImpl implements SubjectService {
 
   private final SubjectRepository subjectRepository;
   private final MapStructMapper mapper;
+
+  public SubjectServiceImpl(SubjectRepository subjectRepository,
+                            MapStructMapper mapper) {
+    this.subjectRepository = subjectRepository;
+    this.mapper = mapper;
+  }
 
   @Override
   public void create(SubjectDto dto) {
