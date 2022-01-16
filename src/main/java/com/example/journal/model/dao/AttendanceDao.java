@@ -9,12 +9,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "attendance")
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class AttendanceDao {
 
   @Id
@@ -33,47 +37,4 @@ public class AttendanceDao {
 
   private ClassType type;
 
-  public Long getId() {
-    return id;
-  }
-
-  public LocalDate getDate() {
-    return date;
-  }
-
-  public void setDate(LocalDate date) {
-    this.date = date;
-  }
-
-  public StudentDao getStudent() {
-    return student;
-  }
-
-  public void setStudent(StudentDao student) {
-    this.student = student;
-  }
-
-  public boolean isAbsent() {
-    return isAbsent;
-  }
-
-  public void setAbsent(boolean absent) {
-    isAbsent = absent;
-  }
-
-  public SubjectDao getSubject() {
-    return subject;
-  }
-
-  public void setSubject(SubjectDao subject) {
-    this.subject = subject;
-  }
-
-  public ClassType getType() {
-    return type;
-  }
-
-  public void setType(ClassType type) {
-    this.type = type;
-  }
 }
